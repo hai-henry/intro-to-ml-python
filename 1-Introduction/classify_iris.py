@@ -47,6 +47,7 @@ def pair_plot_data(dataset, X_train, y_train):
         alpha=0.8,
         cmap=mglearn.cm3,
     )
+    plt.show()
 
 
 def main():
@@ -58,20 +59,7 @@ def main():
         iris_dataset["data"], iris_dataset["target"], random_state=0
     )
 
-    iris_dataframe = pd.DataFrame(X_train, columns=iris_dataset.feature_names)
-
-    # Create scatter matrix from dataframe, color by y_train (output)
-    pd.plotting.scatter_matrix(
-        iris_dataframe,
-        c=y_train,
-        figsize=(15, 15),
-        marker="o",
-        hist_kwds={"bins": 20},
-        s=60,
-        alpha=0.8,
-        cmap=mglearn.cm3,
-    )
-    plt.show()
+    pair_plot_data(iris_dataset, X_train, y_train)
 
 
 if __name__ == "__main__":
