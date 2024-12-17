@@ -12,6 +12,13 @@ Typically input is given, and output is not. eg. Categorizing customers into gro
 - Given a set of customer records, you might want to identify customer similarities and categorize them. Could be 
 "athletes", "non-athletes", "parents". Because you do not know these customers beforehand, you do not know where
 to categorize them, you have no known outputs.
-
-
-
+### K-Nearest Neighbors
+- Given a new data point
+- Find the nearest point (neighbor)
+	- k = 1, finding the **single** nearest neighbor
+	- e.g k = 3 or 5, finding the nearest neighbors
+- Assign label to the new data point
+- e.g scatter plot with classes = red, blue, green k = 5
+	- New point given
+	- Nearest neighbors: 2 reds, 3 blues
+	- New point classifies as blue
