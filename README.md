@@ -36,7 +36,9 @@ The goal of **regression** is to predict a continuous number. eg. Predicting a p
 	- Typically want model to generalize as accurate as possible
 - **Overfitting:** Occurs when the model is fit too closely to the training set and works well with the training set but not able to generalize to new data.
 	- Can happen when building a model that is too complex for the amount of data we have
+  - High complexity
 - **Underfitting:** Occurs when the model is too simple. Performs poorly on training set, does not capture the underlying patterns and relationships in data. 
+  - Low complexity
 	- Can happen when the model is generalizing too much (oversimplifying data)
 		- eg. Everybody who owns a phone has an iPhone
 
