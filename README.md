@@ -40,3 +40,6 @@ The goal of **regression** is to predict a continuous number. eg. Predicting a p
 	- Can happen when the model is generalizing too much (oversimplifying data)
 		- eg. Everybody who owns a phone has an iPhone
 
+<div align="center">	
+	<img src="https://github.com/user-attachments/assets/41702d51-08b5-4726-bc29-0247403e56ed" alt="Model complexity" width="600px">
+</div>
