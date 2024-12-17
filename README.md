@@ -10,5 +10,8 @@ ML algorithm that learns from input/output pairs. User provides inputs and the d
 ### Unsupervised Learning
 Typically input is given, and output is not. eg. Categorizing customers into groups with similar preferences
 - Given a set of customer records, you might want to identify customer similarities and categorize them. Could be 
-"athletes", "non-athletes", "parents". Because you do not know these customers beforehand, you do not know where aaaaaaaaaaaaa
+"athletes", "non-athletes", "parents". Because you do not know these customers beforehand, you do not know where
 to categorize them, you have no known outputs.
+
+
+
