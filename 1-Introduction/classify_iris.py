@@ -10,6 +10,9 @@ classification problem. The different species are called classes.
 
 from sklearn.datasets import load_iris  # Import sklearn dataset
 from sklearn.model_selection import train_test_split  # Dataset split function
+import pandas as pd
+import mglearn
+import matplotlib.pyplot as plt
 
 
 def print_data_info(dataset):
@@ -28,6 +31,24 @@ def print_data_info(dataset):
         print(f" {features}, {target}")
 
 
+def pair_plot_data(dataset, X_train, y_train):
+    # Convert X_train to dataframe
+    # Columns are labeled with features
+    iris_dataframe = pd.DataFrame(X_train, columns=dataset.feature_names)
+
+    # Create scatter matrix from dataframe, color by y_train (output)
+    pd.plotting.scatter_matrix(
+        iris_dataframe,
+        c=y_train,
+        figsize=(15, 15),
+        marker="o",
+        hist_kwds={"bins": 20},
+        s=60,
+        alpha=0.8,
+        cmap=mglearn.cm3,
+    )
+
+
 def main():
     iris_dataset = load_iris()  # Load the dataset to variable
 
@@ -36,6 +57,21 @@ def main():
     X_train, X_test, y_train, y_test = train_test_split(
         iris_dataset["data"], iris_dataset["target"], random_state=0
     )
+
+    iris_dataframe = pd.DataFrame(X_train, columns=iris_dataset.feature_names)
+
+    # Create scatter matrix from dataframe, color by y_train (output)
+    pd.plotting.scatter_matrix(
+        iris_dataframe,
+        c=y_train,
+        figsize=(15, 15),
+        marker="o",
+        hist_kwds={"bins": 20},
+        s=60,
+        alpha=0.8,
+        cmap=mglearn.cm3,
+    )
+    plt.show()
 
 
 if __name__ == "__main__":
