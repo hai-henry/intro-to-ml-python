@@ -27,7 +27,7 @@ Two major types of supervised machine learning problems:
 - Classification
 - Regression
 ### Classification and Regression
-The goal of **classification** is to predict a *class label*,in [[#1. Introduction|chapter 1]], we created an application that classified irises into one of the three species. Classification can also be separated into:
+The goal of **classification** is to predict a *class label*,in chapter 1, we created an application that classified irises into one of the three species. Classification can also be separated into:
 - Binary classification
 - Multiclass classification
 The goal of **regression** is to predict a continuous number. eg. Predicting a person's annual income based off their education, age, location. Typically regression has continuity in the output unlike classification.
