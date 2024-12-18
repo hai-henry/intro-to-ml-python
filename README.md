@@ -45,3 +45,46 @@ The goal of **regression** is to predict a continuous number. eg. Predicting a p
 <div align="center">	
 	<img src="https://github.com/user-attachments/assets/41702d51-08b5-4726-bc29-0247403e56ed" alt="Model complexity" width="600px">
 </div>
+
+### Linear Models
+Linear models make predictions using a linear function of input features. Widely used in practice.
+- For datasets with many features, linear models can be very powerful
+	- if you have more features than data points
+#### Linear models for regression (general formula)
+$$\hat{y}=w[0]*x[0]+w[1]*x[1]+...+w[p]*x[p]+b$$
+- $\hat{y}$ is the prediction the model makes
+- $x[0]$ to $x[p]$ are features
+- $w$ and $b$ are learned parameters from model
+##### Linear regression for single feature
+$$\hat{y} = w[0] *x[0] +b$$
+#### Ridge Regression
+Also linear model for regression, formula for prediction is the same for ordinary least squares.
+- Coefficients $w$ chosen to predict well on training data but also fit constraints.
+	- Want $w$ to be close to zero
+- More restricted, less likely to overfit
+- Features should have little effect on outcome as possible, while predicting well. This constraint is called ***regularization***, meaning explicitly restricting model to avoid overfitting.
+	- In ridge regression, particular kind used is **L2 regularization**
+- increasing Lowalpha = more restrict
+- decreasing alpha = less restrict
+- With more data, regularization becomes less important
+	- Given enough data, ridge and linear regression will have same performance
+#### Lasso
+Alternative to ridge, for regularizing linear regression. Restricts coefficient closer to zero but through **L1 regularization**.
+- When using L1 Regularization, some coefficients are exactly zero
+	- Means some features ignored by model
+		- makes model easier to interpret
+		- can real most important features of model
+- Ridge usually first choice between the two
+- If you have large amount of features but only expect a few to be important, Lasso might be better
+##### Example: Lasso
+- Training set score: 0.29
+- Test set score: 0.21
+- Number of features used: 4 
+Bad performance on both training and test. We are underfitting, lasso also only used 4 of 105 features. Alpha is at alpha = 1.0, decrease alpha to reduce underfitting and increase max_iter.
+ - Training set score: 0.90
+- Test set score: 0.77
+- Number of features used: 33
+Lower alpha allowed to fit a more complex model, performance is better. If alpha goes too low, we lose regularization.
+#### Linear models for classification
+Extensively used for classification. **Binary classification** formula:
+$$\hat{y}=w[0]*x[0]+w[1]*x[1]+...+w[p]*x[p]+b > 0$$
