@@ -55,7 +55,7 @@ $$\hat{y}=w[0]*x[0]+w[1]*x[1]+...+w[p]*x[p]+b$$
 - $\hat{y}$ is the prediction the model makes
 - $x[0]$ to $x[p]$ are features
 - $w$ and $b$ are learned parameters from model
-##### Linear regression for single feature
+ **Linear regression for single feature**:
 $$\hat{y} = w[0] *x[0] +b$$
 #### Ridge Regression
 Also linear model for regression, formula for prediction is the same for ordinary least squares.
@@ -64,7 +64,7 @@ Also linear model for regression, formula for prediction is the same for ordinar
 - More restricted, less likely to overfit
 - Features should have little effect on outcome as possible, while predicting well. This constraint is called ***regularization***, meaning explicitly restricting model to avoid overfitting.
 	- In ridge regression, particular kind used is **L2 regularization**
-- increasing Lowalpha = more restrict
+- increasing alpha = more restrict
 - decreasing alpha = less restrict
 - With more data, regularization becomes less important
 	- Given enough data, ridge and linear regression will have same performance
@@ -88,3 +88,19 @@ Lower alpha allowed to fit a more complex model, performance is better. If alpha
 #### Linear models for classification
 Extensively used for classification. **Binary classification** formula:
 $$\hat{y}=w[0]*x[0]+w[1]*x[1]+...+w[p]*x[p]+b > 0$$
+**Common models:**
+- Logistic regression
+- Linear support vector machines (Linear SVMs)
+Strength of regularization is called C.
+- Higher C corresponds to less regularization
+- low value C, algo tries to adjust majority of data points
+- higher value of C, importance that each datapoint be classified correctly
+#### Linear models for multiclass classification
+- For thousands or millions of datasets use solver='sag' option in LogisticRegression and ridge, faster than default
+### Decision Trees
+- Widely used for classification and regression tasks
+- Essentially learn if/else into a decision
+- Preventing overfitting:
+	- Pre-pruning
+	- Pruning
+- *Feature importance*, rates how important each feature is for decision tree
